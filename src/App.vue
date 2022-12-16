@@ -1,21 +1,18 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from "./components/HelloWorld.vue";
+import { useTheme } from "@/hooks/useTheme";
+import zhCN from "ant-design-vue/es/locale/zh_CN";
+const { initTheme } = useTheme();
+
+/** 初始化主题 */
+initTheme();
+/** 将 Element Plus 的语言设置为中文 */
+const locale = zhCN;
 </script>
 
 <template>
-	<div>
-		<a href="https://vitejs.dev" target="_blank">
-			<img src="/vite.svg" class="logo" alt="Vite logo" />
-		</a>
-		<a href="https://vuejs.org/" target="_blank">
-			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-		</a>
-	</div>
-	<hello-world msg="Vite + Vue" />
+	<a-config-provider :locale="locale">
+		<router-view />
+	</a-config-provider>
 </template>
 
 <style scoped>
