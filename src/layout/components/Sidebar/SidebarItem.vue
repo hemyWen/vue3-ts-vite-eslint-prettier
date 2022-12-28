@@ -103,15 +103,15 @@ const resolvePath = (routePath: string) => {
 }
 .simple-mode {
 	&.first-level {
-		/deep/ .ant-menu-submenu-arrow,
-		/deep/ .ant-menu-title-content {
+		:deep(.ant-menu-submenu-arrow),
+		:deep(.ant-menu-title-content) {
 			display: none;
 		}
-		/deep/ .ant-menu-submenu-title {
+		:deep(.ant-menu-submenu-title) {
 			padding-right: 16px;
 		}
-		/deep/ .ant-menu-submenu,
-		/deep/ .ant-menu-item {
+		:deep(.ant-menu-submenu),
+		:deep(.ant-menu-item) {
 			text-align: center;
 		}
 	}

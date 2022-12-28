@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div></div>
+	<a-button type="primary">Primary Button</a-button>
 </template>
 
 <style scoped></style>
