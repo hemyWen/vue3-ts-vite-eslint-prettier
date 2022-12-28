@@ -16,6 +16,13 @@ export default defineConfig({
 	resolve: {
 		alias
 	},
+	css: {
+		preprocessorOptions: {
+			less: {
+				javascriptEnabled: true
+			}
+		}
+	},
 	server: {
 		/** 是否开启 HTTPS */
 		/** 接口代理 */

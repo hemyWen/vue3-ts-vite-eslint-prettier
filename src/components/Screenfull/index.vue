@@ -40,7 +40,7 @@ onUnmounted(() => {
 
 <template>
 	<div @click="click">
-		<a-tooltip>
+		<a-tooltip placement="left">
 			<template #title>{{ tips }}</template>
 			<fullscreen-exit-outlined v-if="isFullscreen" />
 			<fullscreen-outlined v-else />
@@ -48,8 +48,11 @@ onUnmounted(() => {
 	</div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .anticon {
 	font-size: 20px;
+	&:focus {
+		outline: none;
+	}
 }
 </style>

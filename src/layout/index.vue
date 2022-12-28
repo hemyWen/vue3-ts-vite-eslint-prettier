@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { Sidebar, NavigationBar } from "./components";
+import { Sidebar, NavigationBar, TagsView } from "./components";
 import { useAppStore, DeviceType } from "@/store/modules/app";
 import { useSettingsStore } from "@/store/modules/settings";
+import AppMain from "./components/AppMain.vue";
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();
 const classObj = computed(() => {
@@ -30,11 +31,12 @@ const fixedHeader = computed(() => {
 		<div :class="{ hasTagsView: showTagsView }" class="main-container">
 			<div :class="{ 'fixed-header': fixedHeader }">
 				<NavigationBar />
+				<TagsView v-if="showTagsView" />
 			</div>
+			<AppMain />
 		</div>
 	</div>
 </template>
-
 <style lang="less" scoped>
 @import "@/styles/mixins.less";
 .app-wrapper {

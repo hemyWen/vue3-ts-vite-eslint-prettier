@@ -2,7 +2,12 @@
 import { useTheme } from "@/hooks/useTheme";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
 const { initTheme } = useTheme();
-
+import { ConfigProvider } from "ant-design-vue";
+ConfigProvider.config({
+	theme: {
+		primaryColor: "red"
+	}
+});
 /** 初始化主题 */
 initTheme();
 /** 将 Element Plus 的语言设置为中文 */
